@@ -1,0 +1,22 @@
+Design a templated data holder ‘DynamicDataHolder’ capable to hold a dynamic data holder of any type If you attempt to add an element to the DynamicDataHolder’s object and
+there is no more room, then a new dynamic array with twice the capacity of the old dynamic array is created and the values of the old dynamic array are copied to the new
+dynamic array. Your data type should have following functionalities.
+void main()
+{
+DynamicDataHolder <int> obj; // declare an object holding array of any default size
+DynamicDataHolder <char> obj2(5); // declare an object holding array of size 5
+DynamicDataHolder <char> obj3=obj2; // creates copy
+cout<< (obj3==obj2); // compares two objects with respect to their data holder values and returns //true if both are same
+for(int i=0; i<10; i++)
+{
+obj.insert(i*2); // every time insert function get called, it should insert value at the end of data holder
+}
+obj.capacity() ; // should return the number of empty spaces in data holder
+obj.size() ; // should return the size of dataHolder
+obj.resize(15) ; // should resize the dataHolder
+cout<< obj2[4]; // should display 5th element of data holder
+cin>> obj2[10]; // should take input for 10th element of data holder, here the size of data holder is 5, so it should be // catered before taking the input
+DynamicDataHolder <int> obj4;
+obj4=obj; // should assign values of obj to obj4
+}
+Note: There should be no memory leakage, dangling pointers and shallow copies
