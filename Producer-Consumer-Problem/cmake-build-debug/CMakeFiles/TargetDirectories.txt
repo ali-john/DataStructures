@@ -1,0 +1,3 @@
+C:/Users/abc/OneDrive/Desktop/C++/Data-Structures/Producer-Consumer-Problem/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/abc/OneDrive/Desktop/C++/Data-Structures/Producer-Consumer-Problem/cmake-build-debug/CMakeFiles/Producer_Consumer_Problem.dir
+C:/Users/abc/OneDrive/Desktop/C++/Data-Structures/Producer-Consumer-Problem/cmake-build-debug/CMakeFiles/rebuild_cache.dir
