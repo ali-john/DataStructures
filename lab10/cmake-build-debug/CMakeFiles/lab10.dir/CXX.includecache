@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/abc/OneDrive/Desktop/C++/Data-Structures/lab10/LinkedList.h
+
+C:/Users/abc/OneDrive/Desktop/C++/Data-Structures/lab10/main.cpp
+iostream
+-
+LinkedList.h
+C:/Users/abc/OneDrive/Desktop/C++/Data-Structures/lab10/LinkedList.h
+queue
+-
+
