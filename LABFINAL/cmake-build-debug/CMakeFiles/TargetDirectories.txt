@@ -1,0 +1,3 @@
+C:/Users/abc/OneDrive/Desktop/C++/Data-Structures/LABFINAL/cmake-build-debug/CMakeFiles/LABFINAL.dir
+C:/Users/abc/OneDrive/Desktop/C++/Data-Structures/LABFINAL/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/abc/OneDrive/Desktop/C++/Data-Structures/LABFINAL/cmake-build-debug/CMakeFiles/rebuild_cache.dir
