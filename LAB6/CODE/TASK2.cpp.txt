@@ -1,0 +1,146 @@
+#include <iostream>
+using namespace std;
+template<class T>
+struct  Node
+{
+    T data;
+    Node *link;
+};
+template<class T>
+class Stack
+{
+public:
+    Node<T> *top;
+    Stack()
+    {
+        top=NULL;
+    }
+    Stack(const Stack &obj)//copy Constructor
+    {
+
+        Node<T> *temp=obj.top;
+        Node<T> *prevLink=NULL;
+        while(temp!=NULL)
+        {
+            if (temp==obj.top)
+            {
+                Node<T> *NewNode=new Node<T>;
+                NewNode->data=temp->data;
+                NewNode->link=NULL;
+                prevLink=NewNode;
+                top=NewNode;
+                temp=temp->link;
+            }
+            else
+            {
+                Node<T> *NewNode=new Node<T>;
+                NewNode->data=temp->data;
+                NewNode->link=NULL;
+                prevLink->link=NewNode;
+                prevLink=NewNode;
+                temp=temp->link;
+            }
+
+        }
+    }
+    void Push(T value)
+    {
+        Node<T> *NewNode=new Node<T>;
+        NewNode->data=value;
+        if(isEmpty())
+        {
+            NewNode->link=NULL;
+            top=NewNode;
+        }
+        else
+        {
+            NewNode->link=top;
+            top=NewNode;
+        }
+        cout<<value<<" pushed to stack"<<endl;
+    }
+    void Pop()
+    {
+        if (isEmpty())
+        {
+            cout<<"Stack is empty"<<endl;
+        }
+        else if (top->link==NULL)
+        {
+            cout<<top->data<<" popped from stack"<<endl;
+            delete top;
+            top=NULL;
+        }
+        else
+        {
+            Node<T> *temp=top;
+            cout<<top->data<<" popped from stack"<<endl;
+            top=top->link;
+            delete temp;
+            temp=NULL;
+        }
+    }
+    void RetrieveTop()//outputs top value at stack
+    {
+        cout<<"Top value at stack is: ";
+        cout<<top->data<<endl;
+    }
+    bool isEmpty()
+    {
+        if (top==NULL)
+            return true;
+        else
+            return false;
+    }
+    ~Stack()//destructor
+    {
+        Node<T> *temp=top;
+        Node<T> *current=NULL;
+        while (temp!=NULL)
+        {
+            current=temp;
+            temp=temp->link;
+            delete current;
+            current=NULL;
+        }
+    }
+
+};
+int main()
+{
+    Stack<int> myStack;
+    //inserting 5 values in stack
+    myStack.Push(1);
+    myStack.Push(2);
+    myStack.Push(3);
+    myStack.Push(4);
+    myStack.Push(5);
+    cout<<"Retrieving from stack "<<endl;
+    myStack.RetrieveTop();
+    cout<<"Popping element from stack "<<endl;
+    myStack.Pop();
+    cout<<"Inserting 6 in stack "<<endl;
+    myStack.Push(6);
+    cout<<"Retrieving from stack "<<endl;
+    myStack.RetrieveTop();
+    cout<<"Popping from stack continuously"<<endl;
+    myStack.Pop();
+    myStack.Pop();
+    myStack.Pop();
+    myStack.Pop();
+    myStack.Pop();
+    myStack.Pop();
+    cout<<"Testing copy constructor: "<<endl;
+    myStack.Push(78);//push some values to stack
+    myStack.Push(65);
+    myStack.Push(3);
+    Stack<int> myStack2=myStack;//copy constructor should invoke to make copy
+    cout<<"Checking top value in myStack2 "<<endl;
+    myStack2.RetrieveTop();
+    myStack2.Pop();//make myStack2 also empty.
+    myStack2.Pop();
+    myStack2.Pop();
+    myStack2.Pop();
+
+    return 0;
+}
