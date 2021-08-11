@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/abc/OneDrive/Desktop/C++/Data-Structures/schedulingAlgo/main.cpp
+iostream
+-
+cstdlib
+-
+list
+-
+cmath
+-
+
